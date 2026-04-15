@@ -1,0 +1,1905 @@
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 77, in register
+    password=auth.get_password_hash(user.password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\auth.py", line 29, in get_password_hash
+    return pwd_context.hash(password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\context.py", line 2258, in hash
+    return record.hash(secret, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 779, in hash
+    self.checksum = self._calc_checksum(secret)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2163, in set_backend
+    return cls.set_backend(name, dryrun=dryrun)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2188, in set_backend
+    cls._set_backend(name, dryrun)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2311, in _set_backend
+    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2224, in _set_backend
+    ok = loader(**kwds)
+         ^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 626, in _load_backend_mixin
+    return mixin_cls._finalize_backend_mixin(name, dryrun)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 421, in _finalize_backend_mixin
+    if detect_wrap_bug(IDENT_2A):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 380, in detect_wrap_bug
+    if verify(secret, bug_hash):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 792, in verify
+    return consteq(self._calc_checksum(secret), chk)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 655, in _calc_checksum
+    hash = _bcrypt.hashpw(secret, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 77, in register
+    password=auth.get_password_hash(user.password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\auth.py", line 29, in get_password_hash
+    return pwd_context.hash(password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\context.py", line 2258, in hash
+    return record.hash(secret, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 779, in hash
+    self.checksum = self._calc_checksum(secret)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2163, in set_backend
+    return cls.set_backend(name, dryrun=dryrun)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2188, in set_backend
+    cls._set_backend(name, dryrun)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2311, in _set_backend
+    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 2224, in _set_backend
+    ok = loader(**kwds)
+         ^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 626, in _load_backend_mixin
+    return mixin_cls._finalize_backend_mixin(name, dryrun)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 421, in _finalize_backend_mixin
+    if detect_wrap_bug(IDENT_2A):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 380, in detect_wrap_bug
+    if verify(secret, bug_hash):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\utils\handlers.py", line 792, in verify
+    return consteq(self._calc_checksum(secret), chk)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\passlib\handlers\bcrypt.py", line 655, in _calc_checksum
+    hash = _bcrypt.hashpw(secret, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 8 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 8 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 8 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 8 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 8 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 8 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 8 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 8 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 8 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 9 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 8, 'created_at'), 'msg': 'Field required', 'input': {'id': 10, 'task_name': 'At 10:00 pm.exam.is conducted', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 9 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 8, 'created_at'), 'msg': 'Field required', 'input': {'id': 10, 'task_name': 'At 10:00 pm.exam.is conducted', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 9 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 8, 'created_at'), 'msg': 'Field required', 'input': {'id': 10, 'task_name': 'At 10:00 pm.exam.is conducted', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 9 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 8, 'created_at'), 'msg': 'Field required', 'input': {'id': 10, 'task_name': 'At 10:00 pm.exam.is conducted', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 9 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 8, 'created_at'), 'msg': 'Field required', 'input': {'id': 10, 'task_name': 'At 10:00 pm.exam.is conducted', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 9 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 8, 'created_at'), 'msg': 'Field required', 'input': {'id': 10, 'task_name': 'At 10:00 pm.exam.is conducted', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 9 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 8, 'created_at'), 'msg': 'Field required', 'input': {'id': 10, 'task_name': 'At 10:00 pm.exam.is conducted', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 9 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 8, 'created_at'), 'msg': 'Field required', 'input': {'id': 10, 'task_name': 'At 10:00 pm.exam.is conducted', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 691, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 296, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 9 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': 1, 'task_name': 'Exam .', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 15, 17, 0, 10), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': 2, 'task_name': 'Exam .am.', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-15', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 15, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': 3, 'task_name': 'Assignment deadline is', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '05:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 3, 'created_at'), 'msg': 'Field required', 'input': {'id': 4, 'task_name': 'Assignment should be submitted within..', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 4, 'created_at'), 'msg': 'Field required', 'input': {'id': 5, 'task_name': 'Assignment should submitted within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-20', 'time': '05:00 AM', 'reminder_time': datetime.datetime(2026, 4, 20, 5, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 5, 'created_at'), 'msg': 'Field required', 'input': {'id': 6, 'task_name': 'Need to submit assignment. within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '05:57 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 17, 57, 2), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 6, 'created_at'), 'msg': 'Field required', 'input': {'id': 7, 'task_name': 'Need to submit the assignment.within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '06:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 18, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 7, 'created_at'), 'msg': 'Field required', 'input': {'id': 8, 'task_name': 'Submit the assignment within .', 'status': 'Pending', 'priority': 'Medium', 'date': '2026-04-14', 'time': '08:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 20, 0), 'user_id': 2}}
+  {'type': 'missing', 'loc': ('response', 8, 'created_at'), 'msg': 'Field required', 'input': {'id': 10, 'task_name': 'At 10:00 pm.exam.is conducted', 'status': 'Pending', 'priority': 'High', 'date': '2026-04-14', 'time': '10:00 PM', 'reminder_time': datetime.datetime(2026, 4, 14, 22, 0), 'user_id': 2}}
+
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 105, in get_tasks
+    GET /api/tasks
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: tasks.description
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 112, in get_tasks
+    tasks = db.query(models.Task).filter(models.Task.user_id == current_user.id).all()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: tasks.description
+[SQL: SELECT tasks.id AS tasks_id, tasks.user_id AS tasks_user_id, tasks.task_name AS tasks_task_name, tasks.description AS tasks_description, tasks.date AS tasks_date, tasks.time AS tasks_time, tasks.reminder_time AS tasks_reminder_time, tasks.reminder_sent AS tasks_reminder_sent, tasks.priority AS tasks_priority, tasks.status AS tasks_status, tasks.created_at AS tasks_created_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.user_id = ?]
+[parameters: (2,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: tasks.description
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 112, in get_tasks
+    tasks = db.query(models.Task).filter(models.Task.user_id == current_user.id).all()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: tasks.description
+[SQL: SELECT tasks.id AS tasks_id, tasks.user_id AS tasks_user_id, tasks.task_name AS tasks_task_name, tasks.description AS tasks_description, tasks.date AS tasks_date, tasks.time AS tasks_time, tasks.reminder_time AS tasks_reminder_time, tasks.reminder_sent AS tasks_reminder_sent, tasks.priority AS tasks_priority, tasks.status AS tasks_status, tasks.created_at AS tasks_created_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.user_id = ?]
+[parameters: (2,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: tasks.description
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 112, in get_tasks
+    tasks = db.query(models.Task).filter(models.Task.user_id == current_user.id).all()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: tasks.description
+[SQL: SELECT tasks.id AS tasks_id, tasks.user_id AS tasks_user_id, tasks.task_name AS tasks_task_name, tasks.description AS tasks_description, tasks.date AS tasks_date, tasks.time AS tasks_time, tasks.reminder_time AS tasks_reminder_time, tasks.reminder_sent AS tasks_reminder_sent, tasks.priority AS tasks_priority, tasks.status AS tasks_status, tasks.created_at AS tasks_created_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.user_id = ?]
+[parameters: (2,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: tasks.description
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 112, in get_tasks
+    tasks = db.query(models.Task).filter(models.Task.user_id == current_user.id).all()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: tasks.description
+[SQL: SELECT tasks.id AS tasks_id, tasks.user_id AS tasks_user_id, tasks.task_name AS tasks_task_name, tasks.description AS tasks_description, tasks.date AS tasks_date, tasks.time AS tasks_time, tasks.reminder_time AS tasks_reminder_time, tasks.reminder_sent AS tasks_reminder_sent, tasks.priority AS tasks_priority, tasks.status AS tasks_status, tasks.created_at AS tasks_created_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.user_id = ?]
+[parameters: (2,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: tasks.description
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 112, in get_tasks
+    tasks = db.query(models.Task).filter(models.Task.user_id == current_user.id).all()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: tasks.description
+[SQL: SELECT tasks.id AS tasks_id, tasks.user_id AS tasks_user_id, tasks.task_name AS tasks_task_name, tasks.description AS tasks_description, tasks.date AS tasks_date, tasks.time AS tasks_time, tasks.reminder_time AS tasks_reminder_time, tasks.reminder_sent AS tasks_reminder_sent, tasks.priority AS tasks_priority, tasks.status AS tasks_status, tasks.created_at AS tasks_created_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.user_id = ?]
+[parameters: (2,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: tasks.description
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 112, in get_tasks
+    tasks = db.query(models.Task).filter(models.Task.user_id == current_user.id).all()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: tasks.description
+[SQL: SELECT tasks.id AS tasks_id, tasks.user_id AS tasks_user_id, tasks.task_name AS tasks_task_name, tasks.description AS tasks_description, tasks.date AS tasks_date, tasks.time AS tasks_time, tasks.reminder_time AS tasks_reminder_time, tasks.reminder_sent AS tasks_reminder_sent, tasks.priority AS tasks_priority, tasks.status AS tasks_status, tasks.created_at AS tasks_created_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.user_id = ?]
+[parameters: (2,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: tasks.description
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 112, in get_tasks
+    tasks = db.query(models.Task).filter(models.Task.user_id == current_user.id).all()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: tasks.description
+[SQL: SELECT tasks.id AS tasks_id, tasks.user_id AS tasks_user_id, tasks.task_name AS tasks_task_name, tasks.description AS tasks_description, tasks.date AS tasks_date, tasks.time AS tasks_time, tasks.reminder_time AS tasks_reminder_time, tasks.reminder_sent AS tasks_reminder_sent, tasks.priority AS tasks_priority, tasks.status AS tasks_status, tasks.created_at AS tasks_created_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.user_id = ?]
+[parameters: (2,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+--- Unhandled Exception ---
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: tasks.description
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 130, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 116, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 670, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 326, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\Downloads\TaskZen AI\Backend\main.py", line 112, in get_tasks
+    tasks = db.query(models.Task).filter(models.Task.user_id == current_user.id).all()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\spnay\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: tasks.description
+[SQL: SELECT tasks.id AS tasks_id, tasks.user_id AS tasks_user_id, tasks.task_name AS tasks_task_name, tasks.description AS tasks_description, tasks.date AS tasks_date, tasks.time AS tasks_time, tasks.reminder_time AS tasks_reminder_time, tasks.reminder_sent AS tasks_reminder_sent, tasks.priority AS tasks_priority, tasks.status AS tasks_status, tasks.created_at AS tasks_created_at, tasks.completed_at AS tasks_completed_at 
+FROM tasks 
+WHERE tasks.user_id = ?]
+[parameters: (2,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
